@@ -1,10 +1,14 @@
-function App() {
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Dashboard from './pages/Dashboard';
+import StockSearch from './pages/StockSearch';
+
+export default function App() {
   return (
-    <div style={{ fontFamily: 'sans-serif', maxWidth: 800, margin: '0 auto', padding: '2rem' }}>
-      <h1>AlgoTrade</h1>
-      <p>Algorithmic trading platform — POC</p>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<StockSearch />} />
+        <Route path="/dashboard/:symbol" element={<Dashboard />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
-
-export default App;
